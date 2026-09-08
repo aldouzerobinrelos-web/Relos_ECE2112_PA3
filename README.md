@@ -85,6 +85,8 @@ https://github.com/aldouzerobinrelos-web/Relos_ECE2112_PA3/blob/main/Relos_ECE21
 then download, then open on Google Colab or Jupyter Notebook, and run every cell.
 
 **Readme File History:**
+
 September 7 2026 - Initial Readme file upload
+
 September 8 2026 - Started and finished the 1st and 2nd problem
 
