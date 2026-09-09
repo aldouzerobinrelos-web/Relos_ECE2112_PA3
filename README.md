@@ -4,7 +4,7 @@ The content of this repository contains Programming Assignment 3 for the course 
 
 # A. POSITIONAL AND LABEL-BASED SLICING
 
-After loading `cars`, complete the following operations.
+The goal of of this problem is that after loading `cars`, complete the following operations.
 
 a. Display the shape and complete list of column names of `cars`.
 
@@ -41,7 +41,7 @@ This displays `cars_6_to_10` containing rows 6 through 10 with only the `Model`,
 
 # B. MODEL LOOKUP
 
-Use Boolean indexing on the `Model` column to answer both requests.
+The goal for this problem is to use Boolean indexing on the `Model` column to answer both requests.
 
 a. Display the complete row for Toyota Corolla.
 
@@ -74,6 +74,30 @@ display(Pontiac_Firebird)
 
 # C. MULTI-MODEL SUBSETTING
 
+For this problem the goal is to create a DataFrame named `selected_cars` containing only the records for three models: Datsun 710, Lotus Europa, and Ferrari Dino.
+
+For these records, retain only `Model`, `mpg`, `cyl`, `hp`, and `gear`. Select the rows by their model values rather than by row numbers. Display `selected_cars` and its shape.
+
+---
+
+```python
+selected_cars = pd.DataFrame(cars.loc[
+    (cars['Model'] == 'Datsun 710') |
+    (cars['Model'] == 'Lotus Europa') |
+    (cars['Model'] == 'Ferrari Dino'),
+    ['Model', 'mpg', 'cyl', 'hp', 'gear']
+])
+```
+
+`cars['Model'] == 'Datsun 710'`, `cars['Model'] == 'Lotus Europa'`, and `cars['Model'] == 'Ferrari Dino'` use Boolean indexing to find the three required models by their names instead of their row numbers. The `|` operator means **or**, so a row is selected if its model matches any of the three names. The column list keeps only `Model`, `mpg`, `cyl`, `hp`, and `gear`. The selected records are stored in `selected_cars`.
+
+```python
+display(selected_cars)
+display(selected_cars.shape)
+```
+
+`display(selected_cars)` displays the three selected car records, while `display(selected_cars.shape)` displays the dimensions of the DataFrame. The output `(3, 5)` means there are 3 rows and 5 columns.
+
 ---
 
 Thank you for reading!
@@ -89,4 +113,6 @@ then download, then open on Google Colab or Jupyter Notebook, and run every cell
 September 7 2026 - Initial Readme file upload
 
 September 8 2026 - Started and finished the 1st and 2nd problem
+
+September 9 2026 - Started and finished 3rd problem
 
